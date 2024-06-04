@@ -1,4 +1,3 @@
-# BFV
 import json
 
 import numpy as np
@@ -9,34 +8,6 @@ from poly import *
 
 
 class Ntru:
-    # Definitions
-    # Z_q[x]/f(x) = x^n + 1 where n=power-of-two
-
-    # Operations
-    # -- SecretKeyGen
-    # -- PublicKeyGen
-    # -- Encryption
-    # -- Decryption
-    # -- EvaluationKeyGenV1
-    # -- EvaluationKeyGenV2 (need to be fixed)
-    # -- HomAdd
-    # -- HomMult
-    # -- RelinV1
-    # -- RelinV2 (need to be fixed)
-
-    # Parameters
-    # (From outside)
-    # -- n (ring size)
-    # -- q (ciphertext modulus)
-    # -- t (plaintext modulus)
-    # -- mu (distribution mean)
-    # -- sigma (distribution std. dev.)
-    # -- qnp (NTT parameters: [w,w_inv,psi,psi_inv])
-    # (Generated with parameters)
-    # -- sk
-    # -- pk
-    # -- rlk1, rlk2
-
     def __init__(self, n, q, t, mu, sigma, qnp):
         self.n = n
         self.q = q
@@ -63,7 +34,6 @@ class Ntru:
     #
     def SecretKeyGen(self, read=False):
         """
-        sk <- R_2
         """
         if not read:
             s = Poly(self.n, self.q, self.qnp)
@@ -81,10 +51,6 @@ class Ntru:
     #
     def PublicKeyGen(self, read=False):
         """
-        a <- R_q
-        e <- X
-        pk[0] <- (-(a*sk)+e) mod q
-        pk[1] <- a
         """
         if not read:
             g = Poly(self.n, self.q, self.qnp)

@@ -12,33 +12,6 @@ from poly import *
 
 
 class Ntru_Ckks:
-    # Definitions
-    # Z_q[x]/f(x) = x^n + 1 where n=power-of-two
-
-    # Operations
-    # -- SecretKeyGen
-    # -- PublicKeyGen
-    # -- Encryption
-    # -- Decryption
-    # -- EvaluationKeyGenV1
-    # -- EvaluationKeyGenV2 (need to be fixed)
-    # -- HomAdd
-    # -- HomMult
-    # -- RelinV1
-    # -- RelinV2 (need to be fixed)
-
-    # Parameters
-    # (From outside)
-    # -- n (ring size)
-    # -- q (ciphertext modulus)
-    # -- t (plaintext modulus)
-    # -- mu (distribution mean)
-    # -- sigma (distribution std. dev.)
-    # -- qnp (NTT parameters: [w,w_inv,psi,psi_inv])
-    # (Generated with parameters)
-    # -- sk
-    # -- pk
-    # -- rlk1, rlk2
 
     def __init__(self, n, q1, q2, q3, mu, sigma, qnp1, qnp2, qnp3, scale):
         self.n = n
