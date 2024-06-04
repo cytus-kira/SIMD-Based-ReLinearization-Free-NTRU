@@ -1,4 +1,3 @@
-# BFV
 import json
 import pickle
 
@@ -62,10 +61,6 @@ class Ntru_Ckks:
     #
     def PublicKeyGen(self, read=False):
         """
-        a <- R_q
-        e <- X
-        pk[0] <- (-(a*sk)+e) mod q
-        pk[1] <- a
         """
         if not read:
             g = Poly(self.n, self.q, self.qnp)
